@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        
+        <meta name="msapplication-tap-highlight" content="no" />
+        <title>Badge Plugin</title>
+
+         
+    </head>
+    <body>
+     <h2 class="section">Set</h2>
+            <div class="container">
+                <div onclick="setBadge(false)">Set 10<br/><span>set()</span></div>
+                <div onclick="setBadge(true)">Set random<br/><span>set()</span></div>
+            </div>
+            <div class="container">
+                <div onclick="increaseBadge()">Increase<br/><span>increase()</span></div>
+                <div onclick="decreaseBadge()">Decrease<br/><span>decrease()</span></div>
+            </div>
+    
+    </body>
+    
+    
+      <script type="text/javascript" src="www/badge.js"></script>
+      <script type="text/javascript" src="tests/tests.js"></script>
+       <script type="text/javascript" src="src/browser/BadgeProxy.js"></script>
+         <script type="text/javascript" src="src/browser/favico.min.js"></script>
+       
+         <script type="text/javascript">
+
+            clearBadge = function () {
+                cordova.plugins.notification.badge.clear(showToast);
+            };
+
+            setBadge = function (rand) {
+                var number = rand ? Math.round(Math.random()*100) : 10;
+                cordova.plugins.notification.badge.set(number, showToast);
+            };
+
+            getBadge = function () {
+                cordova.plugins.notification.badge.get(showToast);
+            };
+
+            increaseBadge = function () {
+                cordova.plugins.notification.badge.increase(1, showToast);
+            };
+
+            decreaseBadge = function () {
+                cordova.plugins.notification.badge.decrease(1, showToast);
+            };
+
+            hasPermission = function () {
+                cordova.plugins.notification.badge.hasPermission(showToast);
+            };
+
+            registerPermission = function () {
+                cordova.plugins.notification.badge.registerPermission(showToast);
+            };
+
+            switchAutoClear = function () {
+                cordova.plugins.notification.badge.configure({
+                    autoClear: !cordova.plugins.notification.badge._config.autoClear
+                });
+
+                showToast('Set autoClear to \n' + cordova.plugins.notification.badge._config.autoClear);
+            };
+
+            changeTitle = function () {
+                var title = cordova.plugins.notification.badge._config.title + '_new';
+
+                cordova.plugins.notification.badge.configure({
+                    title: title
+                });
+
+                showToast('Set title to \n"' + title + '"');
+            };
+        </script>
+      
+     
+</html>
