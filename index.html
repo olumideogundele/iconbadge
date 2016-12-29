@@ -40,6 +40,7 @@
             setBadge = function (rand) {
                 var number = rand ? Math.round(Math.random()*100) : 10;
                 cordova.plugins.notification.badge.set(number, showToast);
+				alert("set");
             };
 
             getBadge = function () {
