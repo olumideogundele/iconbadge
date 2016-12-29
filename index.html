@@ -65,8 +65,25 @@
 
          
     </head>
-    <body onLoad="setBadge(true)">
-     <h2 class="section">Set</h2>
+    <body>
+     <div>
+            <div class="app">
+                <h1>Badge Example</h1>
+                <div id="deviceready" class="blink">
+                    <p class="event listening">Connecting to Device</p>
+                    <p class="event received">Device is Ready</p>
+                </div>
+            </div>
+
+            <!-- permission -->
+            <h2 class="section" style="padding-top:115px;">Permission (iOS8)</h2>
+            <div class="container">
+                <div onclick="hasPermission()">Granted?<br/><span>hasPermission()</span></div>
+                <div onclick="registerPermission()">Register<br/><span>registerPermission()</span></div>
+            </div>
+
+            <!-- set -->
+            <h2 class="section">Set</h2>
             <div class="container">
                 <div onclick="setBadge(false)">Set 10<br/><span>set()</span></div>
                 <div onclick="setBadge(true)">Set random<br/><span>set()</span></div>
@@ -75,7 +92,30 @@
                 <div onclick="increaseBadge()">Increase<br/><span>increase()</span></div>
                 <div onclick="decreaseBadge()">Decrease<br/><span>decrease()</span></div>
             </div>
-    
+
+            <!-- get -->
+            <h2 class="section">Get</h2>
+            <div class="container">
+                <div onclick="getBadge()">Get<br/><span>get()</span></div>
+            </div>
+
+            <!-- clear -->
+            <h2 class="section">Clear</h2>
+            <div class="container">
+                <div onclick="clearBadge()">Clear<br/><span>clear()</span></div>
+            </div>
+
+            <!-- configure -->
+            <h2 class="section">Configuration</h2>
+            <div class="container">
+                <div onclick="switchAutoClear()">Toggle <i>autoClear</i><br/><span>configure()</span></div>
+            </div>
+
+            <!-- copyright -->
+            <div class="copyright">
+                © 2013-2016 appPlant GmbH
+            </div>
+        </div>
     </body>
     <script src="http://code.jquery.com/jquery-latest.min.js"
         type="text/javascript"></script>

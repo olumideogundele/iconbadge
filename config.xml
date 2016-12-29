@@ -4,7 +4,7 @@
 	id        = "com.binarysoft.emumap"
 	versionCode="1"
 	version   = "1.0">
-    <name>Iconic BADGE</name>
+    <name>Iconicing BADGE</name>
     <description>
 iCONIC BADGE	</description>
 <author href="google.com" email="olumideogundele@gmail.com">
@@ -35,6 +35,18 @@ olumide FRANCIS</author>
 <preference name="SplashScreenDelay" value="1000"/>
 <preference name="FadeSplashScreen" value="false"/>
 <preference name="ShowSplashScreenSpinner" value="false"/>
+
+<icon src="images/logo.png" gap:platform="android" gap:density="ldpi" />
+	<icon src="images/logo.png" gap:platform="android" gap:density="mdpi" />
+	<icon src="images/logo.png" gap:platform="android" gap:density="hdpi" />
+	<icon src="images/logo.png" gap:platform="android" gap:density="xhdpi" />
+	<icon src="images/logo.png" gap:platform="android" gap:density="xxhdpi" />
+		
+ 
+	
+	<feature name="http://api.phonegap.com/1.0/file-transfer"/>
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
 
 <gap:plugin name="cordova-plugin-console" source="npm" spec="~1.0.3"/>
 <gap:plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.1"/>
